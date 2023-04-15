@@ -20,36 +20,107 @@
   <body>
     <main class="hero">
       <div class="container">
-        <h1><span>F1</span> & <span>MotoGP</span> 2023 Calendars</h1>
+        <h1>
+          <span class="f1 largeFont">F1</span> &
+          <span class="motogp">MotoGP</span> 2023 Calendar
+        </h1>
         <button class="switch-btn">
           <span>F1</span>
           <span class="btn-sub">MotoGP</span>
           <span class="switch"> </span>
         </button>
-        <div class="race">
-          <ul></ul>
+        <div class="lists">
+          <div class="completed">
+            <ul class="red green">
+              <li>1${race.competition.name}<br />${time}</li>
+              <li>2${race.competition.name}<br />${time}</li>
+              <li>3${race.competition.name}<br />${time}</li>
+            </ul>
+          </div>
+          <div class="uncompleted">
+            <ul>
+              <li>1${race.competition.name}<br />${time}</li>
+              <li>2${race.competition.name}<br />${time}</li>
+              <li>3${race.competition.name}<br />${time}</li>
+              <li>4${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>1${race.competition.name}<br />${time}</li>
+              <li>2${race.competition.name}<br />${time}</li>
+              <li>3${race.competition.name}<br />${time}</li>
+              <li>4${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="motoGP-calendar">
+          <ul class="red green"></ul>
         </div>
       </div>
-      <div class="container hidden">
-        <h1><span>F1</span> & <span>MotoGP</span> 2023 Calendars</h1>
-        <div class="race">
-          <ul></ul>
-        </div>
-        <div class="motogp">
-          <ul></ul>
-        </div>
-      </div>
+      <!-- <div class="container-2">
+          <h1>
+            <span class="f1 largeFont">F1</span> &
+            <span class="motogp">MotoGP</span> 2023 Calendar
+          </h1>
+          <button class="switch-btn">
+            <span>F1</span>
+            <span class="btn-sub">MotoGP</span>
+            <span class="switch"> </span>
+          </button>
+          <div class="f1">
+            <ul>
+              <li>hi</li>
+              <li>hi</li>
+              <li>hi</li>
+              <li>hi</li>
+              <li>hi</li>
+              <li>hi</li>
+            </ul>
+          </div>
+        </div> -->
     </main>
     <footer class="footer">
       <div class="footer-ct">
-        <p>F1 & MotoGP Calendars</p>
+        <p>F1 & MotoGP Calendar</p>
       </div>
       <div class="footer-ct">
         <p>
-          &copy;Pavels Aleksejevs All Rights Reserved <span id="date"></span>
+          &copy;Pavels Aleksejevs All Rights Reserved
+          <span id="date"></span>
         </p>
       </div>
     </footer>
+
     <script src="app.js"></script>
   </body>
 </html>
