@@ -1,19 +1,29 @@
 body {
   font-family: "Exo 2", sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("./img/pic1.jpg") no-repeat center center / cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./img/pic1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   width: 100%;
+}
+
+.main-container {
 }
 
 .hero {
   display: flex;
   justify-content: center;
-  height: 95vh;
+  height: 96vh;
 }
 
 .hidden {
-  display: none;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./img/pic2.jpg") no-repeat center center / cover;
+  height: 100vh;
+  width: 100%;
 }
 
 .switch-btn {
@@ -22,26 +32,27 @@ body {
   left: 17%; */
   margin: 0 auto;
   margin-top: 2rem;
-  width: 8rem;
-  height: 2rem;
+  width: 9rem;
+  height: 2.25rem;
   display: flex;
   border-radius: 8px;
   align-items: center;
   justify-content: space-between;
   border: 2px #fff solid;
-  transition: all 0.3s linear;
+  /* transition: all 0.2s linear; */
+  font-weight: 700;
 }
 
 .switch-btn span {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 1rem;
   cursor: pointer;
   color: #000;
 }
 
-/* .btn-sub {
-  padding-left: 35px;
-} */
+.switch-btn span:first-of-type {
+  padding-left: 1rem;
+}
 
 .switch {
   position: absolute;
@@ -53,7 +64,7 @@ body {
   border-radius: 8px;
   margin: 0;
   display: block;
-  transition: all 0.3s linear;
+  transition: all 0.25s linear;
 }
 
 .slide .switch {
@@ -65,12 +76,59 @@ body {
   font-size: 3.25rem;
   font-weight: 400;
   margin-top: 2.5rem;
+  text-align: center;
 }
 
 .container h1 span {
   color: #fb5858;
-  font-size: 4rem;
+  /* font-size: 4rem; */
   font-weight: 600;
+}
+
+.largeFont {
+  font-size: 4rem;
+  /* transition: font-size 0.7s linear; */
+}
+
+.lists {
+  color: white;
+  margin-top: 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16rem;
+  grid-auto-flow: row;
+}
+
+.completed ul,
+.uncompleted ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  column-gap: 3rem;
+  /* flex-direction: column-reverse; */
+}
+
+ul {
+  /* columns: 3;
+  column-gap: 20cm;
+  column-gap: 50px;
+  text-align: left; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+
+  /* column-gap: 10rem;
+  row-gap: 1.1rem; */
+  display: grid;
+  grid-auto-flow: column;
+}
+
+ul li {
+  padding: 0.8rem 0;
+  font-size: 1.5rem;
+}
+
+ul a {
+  color: #fff;
 }
 
 .completed {
@@ -78,7 +136,10 @@ body {
 }
 
 .footer {
-  height: 5vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 4vh;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,7 +148,7 @@ body {
 .footer-ct {
   display: flex;
   justify-content: space-between;
-  margin: 0 2rem;
+  margin: 0 1.5rem;
   color: #fb5858;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
