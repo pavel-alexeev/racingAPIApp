@@ -1,5 +1,6 @@
 const options = {
   method: "GET",
+  cache: "force-cache",
   headers: {
     "X-RapidAPI-Key": "ec84f86810msh1f3da5bddba85bfp1888e6jsn272661a372e6",
     "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
@@ -14,7 +15,6 @@ fetch(
   .then((data) =>
     data.response.forEach((race) => {
       let raceTrack;
-      let webLink = race.competition.name.replace("Grand Prix", "");
       const time = `${new Date(race.date).toLocaleString("en-GB", {
         year: "numeric",
         month: "2-digit",
