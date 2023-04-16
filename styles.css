@@ -11,13 +11,15 @@ body {
 }
 
 .container {
-  max-width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 .hero {
   display: flex;
   justify-content: center;
-  height: 96vh;
+  height: 97vh;
+  max-width: 100vw;
   position: relative;
 }
 
@@ -39,8 +41,7 @@ body {
 .switch-btn {
   position: relative;
   margin: 0 auto;
-  margin-top: 1rem;
-  width: 9rem;
+  width: 9.5rem;
   height: 2.25rem;
   display: flex;
   border-radius: 8px;
@@ -52,7 +53,7 @@ body {
 
 .switch-btn span {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   color: #000;
 }
@@ -109,6 +110,7 @@ body {
   grid-auto-flow: row;
   margin: 0 80px;
   height: auto;
+  max-width: 100%;
 }
 
 .lists h3,
@@ -161,7 +163,7 @@ ul a {
   position: fixed;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.55);
-  height: 4vh;
+  height: 3vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -235,5 +237,20 @@ ul a {
 
   .largeFont {
     font-size: 2.25rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .completed-sub,
+  .uncompleted-sub {
+    column-gap: 2.5rem;
+    row-gap: 1rem;
+  }
+
+  .lists {
+    margin-top: 4.5rem;
+    padding-bottom: 5rem;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 6em;
   }
 }
