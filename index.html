@@ -19,66 +19,56 @@
   </head>
   <body>
     <main class="hero">
+      <div class="timer">
+        <p>Next race in: <span id="timer"></span></p>
+      </div>
       <div class="container">
-        <h1>
-          <span class="f1 largeFont">F1</span> &
-          <span class="motogp">MotoGP</span> 2023 Calendar
-        </h1>
+        <div class="heading-container">
+          <h1>
+            <span class="f1 largeFont">F1</span> &
+            <span class="motogp">MotoGP</span> 2023 Calendar
+          </h1>
+        </div>
+
         <button class="switch-btn">
           <span>F1</span>
           <span class="btn-sub">MotoGP</span>
           <span class="switch"> </span>
         </button>
         <div class="lists">
-          <div class="completed">
-            <ul class="red green">
-              <li>1${race.competition.name}<br />${time}</li>
+          <div class="uncompleted">
+            <h3>Future Races</h3>
+            <ul class="uncompleted-sub">
+              <!-- <li>1${race.competition.name}<br />${time}</li>
               <li>2${race.competition.name}<br />${time}</li>
               <li>3${race.competition.name}<br />${time}</li>
+              <li>4${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>${race.competition.name}<br />${time}</li>
+              <li>1${race.competition.name}<br />${time}</li> -->
             </ul>
           </div>
-          <div class="uncompleted">
-            <ul>
-              <li>1${race.competition.name}<br />${time}</li>
+          <div class="completed">
+            <h3>Completed races</h3>
+            <ul class="completed-sub">
+              <!-- <span class="nextIcon">Next</span> -->
+              <!-- <li>1${race.competition.name}<br />${time}</li>
               <li>2${race.competition.name}<br />${time}</li>
-              <li>3${race.competition.name}<br />${time}</li>
-              <li>4${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>1${race.competition.name}<br />${time}</li>
-              <li>2${race.competition.name}<br />${time}</li>
-              <li>3${race.competition.name}<br />${time}</li>
-              <li>4${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
-              <li>${race.competition.name}<br />${time}</li>
+              <li>3${race.competition.name}<br />${time}</li> -->
             </ul>
           </div>
         </div>
