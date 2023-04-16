@@ -22,59 +22,21 @@ fetch(
         hour: "2-digit",
         minute: "2-digit",
       })}`;
-      // let startingTimes = ["Hello"];
-      // startingTimes.push(race.date);
       const completed = () => {
         if (race.status === "Completed") {
-          raceTrack = `<a href=""><li>${race.competition.name}<br>${time}</li></a>`;
+          raceTrack = `<li>${race.competition.name}<br>${time}</li>`;
           document
             .querySelector(".completed-sub")
             .insertAdjacentHTML("beforeend", raceTrack);
         } else {
-          raceTrack = `<a href=""><li>${race.competition.name}<br>${time}</li></a>`;
+          raceTrack = `<li>${race.competition.name}<br>${time}</li>`;
           document
             .querySelector(".uncompleted-sub")
             .insertAdjacentHTML("beforeend", raceTrack);
         }
       };
 
-      // const nextRace = () => {};
-
-      // console.log(webLink);
       completed();
-
-      // console.log(startingTimes);
-      // async function listItems() {
-      //   const result = completed();
-      //   result.firstElementChild.innerHTML;
-      //   console.log(result);
-      // }
-      // console.log(listItems());
-
-      // const schedule = [];
-      // const racingTimes = race.date.forEach((time) => {
-      //   schedule += time;
-      // });
-
-      let raceTime = race.date;
-      let schedule = [];
-      if (race.status === "Scheduled") {
-        // raceTime.forEach((time) => {
-        //   schedule.push(time);
-        // });
-        // schedule.push(race.date);
-        // console.log(schedule[0]);
-        // data.date.forEach((x) => {
-        //   schedule.push(x);
-        //   console.log(x);
-        // });
-        // console.log(schedule);
-      }
-
-      //   const status = race.status;
-
-      // document.querySelector("ul").insertAdjacentHTML("beforeend", time);
-      //   document.querySelector("ul").insertAdjacentHTML("beforeend", status);
     })
   )
   .catch((err) => console.error(err));
@@ -84,14 +46,8 @@ const date = document.getElementById("date");
 date.appendChild(document.createTextNode(new Date().getFullYear()));
 
 const btn = document.querySelector(".switch-btn");
-// const cont2 = document.querySelector(".container-2");
-// const hidden = document.querySelector(".hidden");
-// const mainContainer = document.querySelector(".main-container");
 const f1 = document.querySelector(".f1");
 const motogp = document.querySelector(".motogp");
-// const largeFont = document.getElementsByClassName("largeFont");
-// const container = document.querySelector("container");
-// const container2 = document.querySelector("container-2");
 
 btn.addEventListener("click", function () {
   btn.classList.toggle("slide");
@@ -114,45 +70,26 @@ btn.addEventListener("click", function () {
   }
 });
 
-// const dateNow = new Date();
-// const timer = document.querySelector("#timer");
-// const timerBtn = document.querySelector(".timer-btn");
-// document.addEventListener("DOMContentLoaded", function () {
-//   timer.innerHTML = new Date().toLocaleString("en-GB", {
-//     year: "numeric",
-//     month: "2-digit",
-//     day: "2-digit",
-//     hour: "2-digit",
-//     minute: "2-digit",
-//   });
-// });
-
-const timerFunc = () => {
-  // new Date();
-  // console.log(new Date());
-};
-
-// console.log(dateNow);
-
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "ec84f86810msh1f3da5bddba85bfp1888e6jsn272661a372e6",
-//     "X-RapidAPI-Host": "motorsportapi.p.rapidapi.com",
-//   },
-// };
-
-// fetch("https://motorsportapi.p.rapidapi.com/api/motorsport/categories", options)
-//   .then((response) => response.json())
-//   .then((response) => console.log(response.categories[11]))
-//   .catch((err) => console.error(err));
-
 function getTimestampInSeconds() {
   return Math.floor(Date.now() / 1000);
 }
 
 console.log(getTimestampInSeconds());
 const uncompletedRaces = document.querySelector(".uncompleted");
-// console.log(document.querySelector(".uncompleted").firstElementChild.innerHTML);
 
-console.log(document.querySelector(".uncompleted li:first-of-type"));
+// Next GP countdown timer
+let countDownDate = new Date("Apr 30, 2023 12:00:00").getTime();
+
+let x = setInterval(function () {
+  let now = new Date().getTime();
+
+  let distance = countDownDate - now;
+
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("timer").innerHTML =
+    "     " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+}, 1000);
