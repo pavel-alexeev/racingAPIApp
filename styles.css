@@ -178,7 +178,26 @@ ul a {
   font-size: 0.85rem;
 }
 
+@media only screen and (min-width: 1800px) {
+  .completed-sub,
+  .uncompleted-sub {
+    column-gap: 2.5rem;
+    row-gap: 1rem;
+  }
+
+  .lists {
+    margin-top: 4.5rem;
+    padding-bottom: 5rem;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 6em;
+  }
+}
+
 @media only screen and (max-width: 800px) {
+  .switch-btn {
+    margin-top: 1.5rem;
+  }
+
   .lists {
     display: block;
     padding-bottom: 5rem;
@@ -196,6 +215,14 @@ ul a {
   .uncompleted-sub {
     column-gap: 1.5rem;
     row-gap: 1rem;
+  }
+
+  .footer {
+    height: 3vh;
+  }
+
+  .copyright {
+    text-align: right;
   }
 }
 
@@ -221,14 +248,11 @@ ul a {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.85);
     padding: 5px 10px;
+    height: 4vh;
   }
 
   .footer-ct {
     margin: 0 0.5rem;
-  }
-
-  .footer:last-child() {
-    text-align: right;
   }
 
   .heading-container h1 {
@@ -237,20 +261,5 @@ ul a {
 
   .largeFont {
     font-size: 2.25rem;
-  }
-}
-
-@media only screen and (min-width: 1800px) {
-  .completed-sub,
-  .uncompleted-sub {
-    column-gap: 2.5rem;
-    row-gap: 1rem;
-  }
-
-  .lists {
-    margin-top: 4.5rem;
-    padding-bottom: 5rem;
-    grid-template-columns: 1.5fr 1fr;
-    column-gap: 6em;
   }
 }
