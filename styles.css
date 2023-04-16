@@ -10,13 +10,21 @@ body {
   width: 100%;
 }
 
-.main-container {
+.container {
+  max-width: 100%;
 }
 
 .hero {
   display: flex;
   justify-content: center;
   height: 96vh;
+  position: relative;
+}
+
+.timer {
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
 }
 
 .hidden {
@@ -70,42 +78,76 @@ body {
 .slide .switch {
   left: 50%;
 }
+.heading-container {
+  height: 100px;
+}
 
-.container h1 {
+.heading-container h1 {
   color: #fff;
-  font-size: 3.25rem;
+  font-size: 2.875rem;
   font-weight: 400;
   margin-top: 2.5rem;
   text-align: center;
+  height: 85px;
 }
 
 .container h1 span {
   color: #fb5858;
-  /* font-size: 4rem; */
   font-weight: 600;
+  transition: font-size 0.4s linear;
 }
 
 .largeFont {
-  font-size: 4rem;
-  /* transition: font-size 0.7s linear; */
+  /* font-size: 4rem; */
+  /* transform: scale(2); */
+
+  font-size: 3.75rem;
 }
 
 .lists {
   color: white;
   margin-top: 4.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 16rem;
+  grid-template-columns: 1.5fr 1.2fr;
+  column-gap: 3em;
   grid-auto-flow: row;
+  margin: 0 80px;
 }
 
-.completed ul,
-.uncompleted ul {
+.lists h3,
+.lists h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.completed-sub,
+.uncompleted-sub {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: row;
-  column-gap: 3rem;
-  /* flex-direction: column-reverse; */
+  column-gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.completed-sub {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  box-shadow: 1px 1px 5px #fb5858;
+  color: #fff;
+}
+
+.uncompleted-sub li:first-of-type::before {
+  content: "NEXT";
+  padding: 4px 6px;
+  font-size: 1.25rem;
+  position: absolute;
+  left: -57px;
+  top: 28px;
+  border: 3px #fb5858 solid;
+  background-color: #fb5858;
+  border-radius: 5px;
 }
 
 ul {
@@ -118,26 +160,25 @@ ul {
 
   /* column-gap: 10rem;
   row-gap: 1.1rem; */
-  display: grid;
-  grid-auto-flow: column;
+  /* display: grid; */
+  /* grid-auto-flow: column; */
 }
 
 ul li {
-  padding: 0.8rem 0;
+  /* padding: 0.8rem 0; */
   font-size: 1.5rem;
+  padding: 0.5rem 0px;
+  max-width: 100%;
 }
 
 ul a {
   color: #fff;
 }
 
-.completed {
-  text-decoration: line-through;
-}
-
 .footer {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.25);
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55);
   height: 4vh;
   width: 100%;
   display: flex;
