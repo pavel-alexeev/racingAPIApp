@@ -23,8 +23,10 @@ body {
 
 .timer {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: absolute;
+  left: 15px;
+  top: 10px;
 }
 
 .hidden {
@@ -36,10 +38,8 @@ body {
 
 .switch-btn {
   position: relative;
-  /* top: 17%;
-  left: 17%; */
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 9rem;
   height: 2.25rem;
   display: flex;
@@ -47,7 +47,6 @@ body {
   align-items: center;
   justify-content: space-between;
   border: 2px #fff solid;
-  /* transition: all 0.2s linear; */
   font-weight: 700;
 }
 
@@ -86,7 +85,7 @@ body {
   color: #fff;
   font-size: 2.875rem;
   font-weight: 400;
-  margin-top: 2.5rem;
+  margin-top: 2.875rem;
   text-align: center;
   height: 85px;
 }
@@ -98,20 +97,18 @@ body {
 }
 
 .largeFont {
-  /* font-size: 4rem; */
-  /* transform: scale(2); */
-
   font-size: 3.75rem;
 }
 
 .lists {
-  color: white;
+  color: #fff;
   margin-top: 4.5rem;
   display: grid;
   grid-template-columns: 1.5fr 1.2fr;
   column-gap: 3em;
   grid-auto-flow: row;
   margin: 0 80px;
+  height: auto;
 }
 
 .lists h3,
@@ -130,12 +127,12 @@ body {
   margin-top: 1.5rem;
   padding: 10px 20px;
   border-radius: 8px;
+  color: rgb(225, 249, 255);
 }
 
 .completed-sub {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   box-shadow: 1px 1px 5px #fb5858;
-  color: #fff;
 }
 
 .uncompleted-sub li:first-of-type::before {
@@ -144,29 +141,14 @@ body {
   font-size: 1.25rem;
   position: absolute;
   left: -57px;
-  top: 28px;
+  top: 23px;
   border: 3px #fb5858 solid;
   background-color: #fb5858;
   border-radius: 5px;
 }
 
-ul {
-  /* columns: 3;
-  column-gap: 20cm;
-  column-gap: 50px;
-  text-align: left; */
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr; */
-
-  /* column-gap: 10rem;
-  row-gap: 1.1rem; */
-  /* display: grid; */
-  /* grid-auto-flow: column; */
-}
-
 ul li {
-  /* padding: 0.8rem 0; */
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding: 0.5rem 0px;
   max-width: 100%;
 }
@@ -192,4 +174,66 @@ ul a {
   margin: 0 1.5rem;
   color: #fb5858;
   font-size: 0.85rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .lists {
+    display: block;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .completed {
+    margin-top: 3rem;
+  }
+
+  .completed-sub,
+  .uncompleted-sub {
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .timer p {
+    font-size: 1.5rem;
+  }
+
+  .heading-container {
+    height: 3.5rem;
+  }
+
+  .lists {
+    margin-top: 4rem;
+  }
+
+  .completed-sub,
+  .uncompleted-sub {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 5px 10px;
+  }
+
+  .footer-ct {
+    margin: 0 0.5rem;
+  }
+
+  .footer:last-child() {
+    text-align: right;
+  }
+
+  .heading-container h1 {
+    font-size: 1.625rem;
+  }
+
+  .largeFont {
+    font-size: 2.25rem;
+  }
 }
