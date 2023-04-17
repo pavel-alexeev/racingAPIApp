@@ -1,3 +1,4 @@
+// API call for racing schedule
 const options = {
   method: "GET",
   cache: "force-cache",
@@ -45,9 +46,11 @@ fetch(
 const date = document.getElementById("date");
 date.appendChild(document.createTextNode(new Date().getFullYear()));
 
+// Switch button
 const btn = document.querySelector(".switch-btn");
 const f1 = document.querySelector(".f1");
 const motogp = document.querySelector(".motogp");
+const lists = document.querySelector(".lists");
 
 btn.addEventListener("click", function () {
   btn.classList.toggle("slide");
@@ -61,21 +64,20 @@ btn.addEventListener("click", function () {
     f1.classList.remove("largeFont");
     document.querySelector("ul").classList.remove("green");
     document.querySelector("ul").classList.add("red");
+    // lists.style.display = "none";
+    lists.style.visibility = "hidden";
+    document.querySelector(".subText").style.display = "block";
+    // lists.classList.toggle("hide");
   } else {
     document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/pic1.jpg")`;
     motogp.classList.remove("largeFont");
     f1.classList.add("largeFont");
     document.querySelector("ul").classList.remove("red");
     document.querySelector("ul").classList.add("green");
+    document.querySelector(".subText").style.display = "none";
+    lists.style.visibility = "visible";
   }
 });
-
-function getTimestampInSeconds() {
-  return Math.floor(Date.now() / 1000);
-}
-
-console.log(getTimestampInSeconds());
-const uncompletedRaces = document.querySelector(".uncompleted");
 
 // Next GP countdown timer
 let countDownDate = new Date("Apr 30, 2023 12:00:00").getTime();
@@ -92,4 +94,7 @@ let x = setInterval(function () {
 
   document.getElementById("timer").innerHTML =
     "     " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+  document.getElementById("mobileTimer").innerHTML =
+    "     " + days + " days | " + hours + " hours | " + minutes + " minutes";
 }, 1000);
