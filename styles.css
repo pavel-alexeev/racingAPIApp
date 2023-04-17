@@ -29,6 +29,7 @@ body {
   position: absolute;
   left: 15px;
   top: 10px;
+  visibility: visible;
 }
 
 .uncompletedTitle,
@@ -261,6 +262,7 @@ ul a {
 
   .timer {
     display: none;
+    visibility: hidden;
   }
 
   .heading-container {
