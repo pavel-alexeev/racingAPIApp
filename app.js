@@ -64,10 +64,8 @@ btn.addEventListener("click", function () {
     f1.classList.remove("largeFont");
     document.querySelector("ul").classList.remove("green");
     document.querySelector("ul").classList.add("red");
-    // lists.style.display = "none";
-    lists.style.visibility = "hidden";
     document.querySelector(".subText").style.display = "block";
-    // lists.classList.toggle("hide");
+    document.querySelector(".lists").style.display = "none";
   } else {
     document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/pic1.jpg")`;
     motogp.classList.remove("largeFont");
@@ -75,7 +73,12 @@ btn.addEventListener("click", function () {
     document.querySelector("ul").classList.remove("red");
     document.querySelector("ul").classList.add("green");
     document.querySelector(".subText").style.display = "none";
-    lists.style.visibility = "visible";
+    const mediaQuery = window.matchMedia("(max-width: 850px)");
+    if (mediaQuery.matches) {
+      document.querySelector(".lists").style.display = "block";
+    } else {
+      document.querySelector(".lists").style.display = "grid";
+    }
   }
 });
 
