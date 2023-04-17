@@ -376,3 +376,9 @@ ul a {
     display: inline-block;
   }
 }
+
+@media (pointer: coarse) {
+  body {
+    background-attachment: inital !important;
+  }
+}
