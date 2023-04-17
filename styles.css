@@ -10,15 +10,15 @@ body {
   width: 100%;
 }
 
-.container {
-  max-width: 100vw;
-  position: relative;
-}
-
 .hero {
   display: flex;
   justify-content: center;
   height: 97vh;
+  max-width: 100vw;
+  position: relative;
+}
+
+.container {
   max-width: 100vw;
   position: relative;
 }
@@ -29,6 +29,11 @@ body {
   position: absolute;
   left: 15px;
   top: 10px;
+}
+
+.uncompletedTitle,
+.completedTitle {
+  display: none;
 }
 
 .hidden {
@@ -101,6 +106,16 @@ body {
   font-size: 3.75rem;
 }
 
+.subText {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-align: center;
+  color: white;
+  margin-top: 4rem;
+  display: none;
+}
+
 .lists {
   color: #fff;
   margin-top: 4.5rem;
@@ -111,12 +126,21 @@ body {
   margin: 0 80px;
   height: auto;
   max-width: 100%;
+  visibility: visible;
 }
 
 .lists h3,
 .lists h3 {
   text-align: center;
   font-size: 2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.uncompleted {
+  position: relative;
 }
 
 .completed-sub,
@@ -130,11 +154,12 @@ body {
   padding: 10px 20px;
   border-radius: 8px;
   color: rgb(225, 249, 255);
+  row-gap: 0.875rem;
 }
 
 .completed-sub {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  box-shadow: 1px 1px 5px #fb5858;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.445);
 }
 
 .uncompleted-sub li:first-of-type::before {
@@ -178,33 +203,35 @@ ul a {
   font-size: 0.85rem;
 }
 
+.copyright span {
+  display: none;
+}
+
 @media only screen and (min-width: 1800px) {
   .completed-sub,
   .uncompleted-sub {
     column-gap: 2.5rem;
-    row-gap: 1rem;
+    row-gap: 0.75rem;
   }
 
   .lists {
-    margin-top: 4.5rem;
+    margin-top: 3.5rem;
     padding-bottom: 5rem;
     grid-template-columns: 1.5fr 1fr;
     column-gap: 6em;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
   .switch-btn {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
   }
 
   .lists {
-    display: block;
     padding-bottom: 5rem;
     margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .completed {
@@ -214,7 +241,8 @@ ul a {
   .completed-sub,
   .uncompleted-sub {
     column-gap: 1.5rem;
-    row-gap: 1rem;
+    row-gap: 1.25rem;
+    column-gap: 4rem;
   }
 
   .footer {
@@ -231,16 +259,56 @@ ul a {
     background-attachment: fixed;
   }
 
-  .timer p {
-    font-size: 1.5rem;
+  .timer {
+    display: none;
   }
 
   .heading-container {
     height: 3.5rem;
   }
 
-  .lists {
-    margin-top: 4rem;
+  .heading-container h1 {
+    font-size: 1.625rem;
+    margin-top: 2rem;
+  }
+
+  .largeFont {
+    font-size: 2.25rem;
+  }
+
+  .subText {
+    font-size: 2rem;
+  }
+
+  .uncompletedTitle,
+  .completedTitle {
+    display: block;
+    text-align: center;
+    width: 95%;
+    margin: 0px auto -40px auto;
+    color: #fff;
+    font-size: 1.375rem;
+    background-color: #2478ad72;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 5px 8px;
+    line-height: 1.2;
+    box-shadow: 0px 0px 8px #28a9fa;
+  }
+
+  .uncompletedTitle span {
+    font-size: 1rem;
+  }
+
+  .completedTitle {
+    position: relative;
+    margin-bottom: -3px;
+    width: 100%;
+  }
+
+  .uncompleted h3,
+  .completed h3 {
+    display: none;
   }
 
   .completed-sub,
@@ -248,22 +316,60 @@ ul a {
     grid-template-columns: 1fr;
   }
 
+  .uncompleted-sub li:first-of-type::before {
+    display: none;
+  }
+
+  .uncompleted-sub li:first-of-type {
+    border-top: none;
+    padding-top: 1rem;
+  }
+
+  .completed-sub {
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 1px 2px 3px #fb5858;
+  }
+
+  .completed-sub li:first-of-type {
+    margin-top: 1rem;
+  }
+
+  .lists {
+    margin: 4rem auto 0 auto;
+    width: 100%;
+  }
+
+  .lists li {
+    border: 1px #fb585891 solid;
+    padding: 0.8rem 1rem;
+    border-radius: 15px;
+    z-index: -1;
+  }
+
   .footer {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.85);
     padding: 5px 10px;
     height: 4vh;
+    display: block;
   }
 
   .footer-ct {
     margin: 0 0.5rem;
+    display: block;
   }
 
-  .heading-container h1 {
-    font-size: 1.625rem;
+  .footer-ct:first-of-type {
+    display: none;
   }
 
-  .largeFont {
-    font-size: 2.25rem;
+  .copyright {
+    text-align: center;
+    padding-top: 4px;
+  }
+
+  .copyright span {
+    display: inline-block;
   }
 }
