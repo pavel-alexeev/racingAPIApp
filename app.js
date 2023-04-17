@@ -46,11 +46,13 @@ fetch(
 const date = document.getElementById("date");
 date.appendChild(document.createTextNode(new Date().getFullYear()));
 
-// Switch button
+// Button toggle
 const btn = document.querySelector(".switch-btn");
 const f1 = document.querySelector(".f1");
 const motogp = document.querySelector(".motogp");
 const lists = document.querySelector(".lists");
+const subText = document.querySelector(".subText");
+const timer = document.querySelector(".timer");
 
 btn.addEventListener("click", function () {
   btn.classList.toggle("slide");
@@ -62,22 +64,20 @@ btn.addEventListener("click", function () {
     document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/pic2.jpg") `;
     motogp.classList.add("largeFont");
     f1.classList.remove("largeFont");
-    document.querySelector("ul").classList.remove("green");
-    document.querySelector("ul").classList.add("red");
-    document.querySelector(".subText").style.display = "block";
-    document.querySelector(".lists").style.display = "none";
+    subText.style.display = "block";
+    lists.style.display = "none";
+    timer.style.display = "none";
   } else {
     document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/pic1.jpg")`;
     motogp.classList.remove("largeFont");
     f1.classList.add("largeFont");
-    document.querySelector("ul").classList.remove("red");
-    document.querySelector("ul").classList.add("green");
-    document.querySelector(".subText").style.display = "none";
+    subText.style.display = "none";
+    timer.style.display = "block";
     const mediaQuery = window.matchMedia("(max-width: 850px)");
     if (mediaQuery.matches) {
-      document.querySelector(".lists").style.display = "block";
+      lists.style.display = "block";
     } else {
-      document.querySelector(".lists").style.display = "grid";
+      lists.style.display = "grid";
     }
   }
 });
@@ -87,7 +87,6 @@ let countDownDate = new Date("Apr 30, 2023 12:00:00").getTime();
 
 let x = setInterval(function () {
   let now = new Date().getTime();
-
   let distance = countDownDate - now;
 
   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
