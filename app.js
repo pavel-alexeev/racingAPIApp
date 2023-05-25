@@ -24,7 +24,7 @@ fetch(
         minute: "2-digit",
       })}`;
       const completed = () => {
-        if (race.status === "Completed") {
+        if (race.status === "Completed" || race.status === "Cancelled") {
           raceTrack = `<li>${race.competition.name}<br>${time}</li>`;
           document
             .querySelector(".completed-sub")
@@ -83,7 +83,7 @@ btn.addEventListener("click", function () {
 });
 
 // Next GP countdown timer
-let countDownDate = new Date("Apr 30, 2023 12:00:00").getTime();
+let countDownDate = new Date("May 28, 2023 14:00:00").getTime();
 
 let x = setInterval(function () {
   let now = new Date().getTime();
